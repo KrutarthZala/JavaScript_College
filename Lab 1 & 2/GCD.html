@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Greatest Common Divisor</title>
+</head>
+<body>
+	<script>
+		n1 = parseInt(prompt("Enter first Number"));
+		n2 = parseInt(prompt("Enter second number"));
+
+		var gcd;
+
+		for ( i=1 ; i <= n1 && i <= n2; i++ )
+		{
+			if (n1 % i == 0 && n2 % i == 0) 
+			{
+				gcd = i;
+			}
+		}
+		document.write(gcd);
+	</script>
+</body>
+</html>

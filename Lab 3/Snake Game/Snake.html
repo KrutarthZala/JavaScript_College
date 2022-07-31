@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Snake game</title>
+	<style type="text/css">
+		table
+		{
+			margin-left: 168vh;
+		}
+		.tdc
+		{
+			padding: 4px;
+		}
+	</style>
+</head>
+<body onload="imgChange()" onkeydown="checkKey(event)">
+	<div style="width : 30%; margin: 0 60px; float:left; display: inline-block;"><h2 id="score"  style="color: blueviolet; float: left;">Score :</h2><h2 id="sc" style="float:center ;">0</h2>
+	</div>
+	<div style="float : right; display: inline-table;">
+	<table style="border: 2px solid yellowgreen; margin-top: -10vh;margin-right: 10vh; margin-bottom: 2vh;position: relative;">
+		<tr>
+			<td class="tdc" colspan="2" style="text-align : center;"><input type="button" value="Top" onclick="goTop()"></td>
+		</tr>
+		<tr>
+			<td class="tdc"><input type="button" value="Left"  onclick="goLeft()"></td>
+			<td class="tdc"><input type="button" value="Right" onclick="goRight()"></td>
+		</tr>
+		<tr>
+			<td class="tdc" colspan="2" style="text-align : center;"><input type="button" value="Bottom" onclick="goBottom()"></td>
+		</tr>
+		<!-- <tr>
+			<td style="text-align : center;" colspan="2"><h2 id="score">Score</h2><h2 id="sc">0</h2></td>
+		</tr> -->
+	</table>
+	</div>
+	<div style="border : 2px solid orange; width: 100% ;height : 80vh ; float :left" id="gameDiv" >
+		<img src="snake.jpg" style="width : 80px; position:absolute;" id="i1">
+		<img src="apple.jpg" style="width : 40px; position: absolute;" id="i2">
+
+		<script type="text/javascript">
+			left = 0;
+			top1 = 0;
+			sl=0;
+			sr=0;
+			sb=0;
+			st=0;
+			// x=0;
+			// y=0;
+			count=0;
+			
+			
+
+			function imgChange()
+			{
+				x = parseInt(Math.random()*(screen.availWidth-110));
+				y = parseInt(Math.random()*(screen.availHeight-110));
+				document.getElementById("i2").style.left = x + "px";
+				document.getElementById("i2").style.top = y + "px";
+			}
+
+			function goLeft()
+			{
+				clearInterval(sr);
+				clearInterval(sb);
+				clearInterval(st);
+				sl = setInterval(goToLeft,50);
+
+			}
+
+			function goRight()
+			{
+				clearInterval(sl);
+				clearInterval(sb);
+				clearInterval(st);
+				sr = setInterval(goToRight,50);
+				
+			}
+
+			function goBottom()
+			{
+				clearInterval(sr);
+				clearInterval(sl);
+				clearInterval(st);
+				sb = setInterval(goToBottom,50);
+					
+			}
+			function goTop()
+			{
+				clearInterval(sl);
+				clearInterval(sr);
+				clearInterval(sb);
+				st = setInterval(goToTop,50);
+			}
+
+			
+
+			function checkForPosition() 
+			{
+				if(Math.abs(left - x) <= 300 && Math.abs(top1 - y) <= 300)
+				{
+					count++;
+					document.getElementById("sc").innerHTML = count;
+					imgChange();
+				}
+			}
+
+			function goToLeft()
+			{
+				checkForPosition();
+				s = document.getElementById("i1");
+				s.style.position='relative';
+				s.style.left='0px';
+				left-=5;
+				if (left < 0) 
+				{
+					document.write("<h1>Game Over..</h1>");
+				}
+				s.style.left = parseInt(s.style.left)+ left +"px";
+				
+			}
+
+			function goToRight()
+			{
+				checkForPosition();
+				s = document.getElementById("i1");
+				s.style.position='relative';
+				s.style.left='0px';
+				left+=5;
+				if(left>screen.availWidth - 110)
+				{
+					document.write("<h1>Game Over..</h1>");
+				}
+				s.style.left = parseInt(s.style.left)+ left +'px';
+				
+			}
+
+			function goToTop() 
+			{
+				checkForPosition();
+				s = document.getElementById("i1");
+				s.style.position = 'relative';
+				s.style.top = '0px';
+				top1-=5;
+				if (top1 < 0) 
+				{
+					document.write("<h1>Game Over..</h1>")
+				}
+				s.style.top = parseInt(s.style.top)+top1+"px";
+			}
+			function goToBottom()
+			{
+				checkForPosition();
+				s=null;
+				s = document.getElementById("i1");
+				s.style.position='relative';
+				s.style.top='0px';
+				top1+=5;
+				if(top1>screen.availHeight - 280)
+				{
+					document.write("<h1>Game Over..</h1>")
+				}
+				s.style.top = parseInt(s.style.top) + top1+"px";	
+			}
+
+
+			function checkKey(e) 
+			{
+			
+				if(e.keyCode==37){
+					goLeft();
+				}
+				else if(e.keyCode==38){
+					goTop();
+				}
+				else if(e.keyCode==39){
+					goRight();
+				}
+				else if(e.keyCode==40){
+					goBottom();
+				}
+		
+			}
+		</script>
+	</div>
+</body>
+</html>

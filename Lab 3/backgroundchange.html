@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Background color change</title>
+</head>
+<body id="main" style="background-color: orange;">
+	<input type="button" value="change BG" onclick="changebg()">
+	<script type="text/javascript">
+		function changebg()
+		{
+			b = document.getElementById("main");
+
+			redColor = parseInt(Math.random()*255);
+			greenColor = parseInt(Math.random()*255);
+			blueColor = parseInt(Math.random()*255);
+
+			b.style.backgroundColor = "rgb("+redColor+","+greenColor+","+blueColor+")";
+		}
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Attendance using key</title>
+</head>
+<body onload="startAttndance()" onkeydown="checkAttendance(event)">
+
+	<h1 style="text-align: center;color: Orange;" id="rollno">101</h1>
+	<div id="outputDiv"></div>
+	<script type="text/javascript">
+		
+		function startAttndance()
+		{
+			i=101;
+			document.getElementById('rollno').innerHTML = i  ;
+		}
+		function checkAttendance(e)
+		{
+			//console.log(event);
+			if (e.keyCode == 37) 
+			{
+				i--;
+				document.getElementById("rollno").innerHTML=i;
+			}
+			else if(e.keyCode == 39)
+			{
+				i++;
+				document.getElementById("rollno").innerHTML=i;
+
+			}
+			else if (e.keyCode == 13) 
+			{
+				document.getElementById('outputDiv').innerHTML += i+",";
+			}
+		}
+	</script>
+</body>
+</html>

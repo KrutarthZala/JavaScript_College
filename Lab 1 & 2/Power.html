@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Power Example</title>
+</head>
+<body>
+	<script>
+		n = parseInt(prompt("Enter two digit numbers."));
+
+		var d,index=0,Ans=1;
+		var arr = new Array();
+
+		while( n > 0)
+		{
+			d = n % 10;
+			arr[index] = d;
+			n = parseInt( n / 10);
+			index++;
+		}
+			
+		for( i = 0 ; i < arr[0]; i++)
+		{
+			Ans = Ans * arr[1];
+		}
+
+		document.write(Ans);
+	</script>
+</body>
+</html>

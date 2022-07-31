@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Mouse Events</title>
+</head>
+<body onmousemove="moveDetail(event)">
+	<table style="margin-left: auto;
+	margin-right: auto;">
+		<tr>
+			<td>
+		<h1 id="myH1" style="color : orange;" >Mouse Over on Screen	</h1>
+		<h2 id="ansH1" style="color : orange; text-align : center;"></h2>
+	</td>
+		</tr>
+		<tr>
+		<td>
+	<h1 id="myH2" style="color : orangered;" onmouseover="overDetail()" >Mouse Over on word</h1>
+	<h2 id="ansH2" style="color : orangered; text-align: center; "></h2>
+	</td>
+</tr>
+<tr><td>
+	<h1 id="myH3" style="color : peru; " onmouseup="upDetail()" onmousedown="downDetail()">Mouse Up & Down</h1>
+</tr></td>
+	</table>
+	<div id="outputDiv" style="border: 2px solid yellowgreen; width: 40vh; height: 45vh; margin-left: auto; margin-right: auto;" onmouseenter="enterDetail()">
+		<h1 id="myH4" style="color : darkblue; text-align: center;"> Mouse Enter in this block</h1>
+		<h2 id="ansH3" style="color : darkgreen; text-align : center;"></h2>
+	</div>
+	<script type="text/javascript">
+		var x=0;
+		var y=0;
+		var z=0;
+
+		function moveDetail(e)
+		{
+			document.getElementById("ansH1").innerHTML = e.screenX + "," + e.screenY;
+		}
+		function overDetail() {
+			document.getElementById("ansH2").innerHTML = y+=1;
+		}
+		function upDetail() {
+			document.getElementById("myH3").style.color = "green"
+		}
+		function downDetail()
+		{
+			document.getElementById("myH3").style.color = "blue";
+		}
+		function  enterDetail() {
+			document.getElementById("ansH3").innerHTML = x+=1;
+		}
+
+	</script>
+</body>
+</html>

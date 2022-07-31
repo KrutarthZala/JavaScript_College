@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Array Inbuilt Functions</title>
+</head>
+<body>
+	<script>
+		let ar1 = new Array(8,7,2,6,9,1,3,4);
+
+		let ar2 = ['HTML','CSS','BOOTSTRAP'];
+		let mix = [88,24,'Array','String',9];
+
+		document.write("Array before sort." + "<br>");
+		document.write(ar1+"<br>");
+		document.write("Array after sort."+"<br>");
+		document.write(ar1.sort()+ "<br>");
+
+		document.write(ar2+ "<br>");
+		ar2.push('JAVASCRIPT')
+		document.write(ar2 + "<br>");
+		ar2.pop();
+		document.write(ar2+ "<br>");
+
+		mix.unshift('JAVA');
+		document.write(mix+ "<br>");
+		mix.shift();
+		document.write(mix+"<br>");
+
+		document.write(ar2.length);
+
+	</script>
+</body>
+</html>

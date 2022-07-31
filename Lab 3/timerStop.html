@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Timer and Stop watch</title>
+</head>
+<body>
+	<table style="padding: 15px; border: 2px solid;">
+	<tr>
+		<td align="center">
+			<input type="text" id="t1">
+			<input type="button" value="Start" onclick="startCount()">
+			<h3 id="a1"></h3>
+
+			<script type="text/javascript">
+				
+				function startCount() {
+					
+					t = setInterval(printCount,1000);
+					n = parseInt(document.getElementById("t1").value)+1;
+				}
+				
+				function printCount()
+				{
+					n--;
+					if (n < 1) 
+					{
+						clearInterval(t);
+					}
+
+					document.getElementById("a1").innerHTML = n;
+				}
+			</script>
+			
+		</td>
+		<td>
+			<input type="button" value="Start" onclick="startTimer()">
+			<input type="button" value="Stop" onclick="endTimer()">
+			<input type="button" value="Clear" onclick="clearScreen()">
+			<h3 id="a2"></h3>
+			<script type="text/javascript">
+				n = 0;
+				function startTimer()
+				{
+					s = setInterval(printNum,100);
+				}
+
+				function printNum()
+				{
+					n++;
+					document.getElementById("a2").innerHTML = n/10;
+				}
+
+				function endTimer()
+				{
+					clearInterval(s);
+				}
+				function clearScreen() {
+					n=0;
+					document.getElementById("a2").innerHTML = n;
+					clearInterval(s);
+				}
+			</script>
+		</td>
+	</tr>
+	</table>
+</body>
+</html>

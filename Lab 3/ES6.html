@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ES6 Examples</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//Array Functions.
+		// setInterval(printCounter,1000);
+
+		// function printCounter() 
+		// {
+		// 	//console.log("Krutarth.");
+		// 	document.write("Krutath."+"<br>");
+		// }
+
+		//Anonymous Function.
+
+		// setInterval(function () { document.write("Krutarth" + "<br>")},1000);
+
+		//Arrow Function.
+
+		//First Method
+		// setInterval(()=>{document.write("Krutarth" + "<br>")},1000);
+
+		//Second Method
+		// arrowf = ()=>{document.write("Krutarth" + "<br>")};
+
+		// arrowf();
+
+		//Destructuring.
+
+		// stu = {
+		// 	name : 'Krutarth',
+		// 	age : 19,
+		// 	Roll_No : 124
+		// }
+
+		// let { name , age } = stu;
+		// document.write(name + "<br>"+ age);
+
+		//Spread Function.
+
+		//Using Array.
+
+		// a = ["abc","def","gh"];
+		// b = ["ijk","lmn","op"];
+
+		// allStu = [...a,'How are you?',...b];//Concate two array.
+
+		// document.write(allStu);
+
+		//Using Objects
+
+		// a = {
+		// 	name : 'Manan',
+		// 	age : 18
+		// }
+
+		// b = {
+		// 	spi : 9.2,
+		// 	Email : 'manan@darshan.ac.in'
+		// }
+
+		// stu = {...a,...b};
+		// console.log(stu);
+		// stu = {...a,...b,name:'Tanay'};
+		// console.log(stu);
+
+		class Student
+		{
+
+			constructor(name,age)
+			{
+				this.name = name;
+				this.age = age;
+			}
+			study()
+			{
+				console.log("I am studying....");
+				console.log("My name is "+this.name + " and my age is "+this.age);
+			}
+		}
+
+		const stu1 = new Student('Krutarth',19);
+		stu1.study();
+
+		
+	</script>
+</body>
+</html>
